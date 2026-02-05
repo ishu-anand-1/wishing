@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Animated gradient background */
+.container {
+  height: 100vh;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffdde1, #ffc3a0);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* center layout */
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* glowing button */
+.btn {
+  padding: 20px 45px;
+  font-size: 22px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(45deg, #ff4b5c, #ff7a18);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(255, 75, 92, 0.6);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(255, 75, 92, 0.9);
+}
+
+/* gift pop animation */
+.giftAppear {
+  font-size: 140px;
+  animation: giftPop 0.6s ease, bounce 1.2s infinite;
+}
+
+@keyframes giftPop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+/* floating hearts */
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
+
+/* wish page card */
+.wishScreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.title {
+  font-size: 44px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* images */
+.photos {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.photos img {
+  width: 220px;
+  height: 220px;
+  border-radius: 18px;
+  object-fit: cover;
+  transition: 0.4s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.photos img:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.message {
+  font-size: 20px;
+  color: white;
+  max-width: 600px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
